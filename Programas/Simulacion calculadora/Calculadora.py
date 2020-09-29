@@ -8,7 +8,7 @@ color_boton=("silver")
 
 def btnClik(num):
     global operador
-    operador=operador+str(num)
+    operador= operador+str(num)
     input_text.set(operador) #ESTA FUNCIÓN SIRVE PARA VISUALIZAR LA OPERACION EN LA PANTALLA
     
 
