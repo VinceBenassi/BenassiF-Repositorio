@@ -53,8 +53,8 @@ while ad <= 10:
 
 
 print("hola, cual es su nombre?")
-nombre = input("Escribe tu nombre:")
-print("bienvenido a python", nombre)
+nombre = input("Escribe tu nombre: ")
+print("bienvenido a python,",nombre)
 
 edad = input("Introduce tu edad, por favor: ")
 edad = int(edad)
