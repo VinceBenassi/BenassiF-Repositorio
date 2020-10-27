@@ -9,9 +9,9 @@ def grafo(pdf):
     for creaGrafo in range(nodos):
         creaGrafo = str(input("Ingrese un nodo: "))
         euler.node(creaGrafo)
-        final = str(input("Con cual nodo quieres conectar el inicio: "))
-        euler.edge(creaGrafo, final)       
+        arista = str(input("Con cual nodo quieres conectar el inicio: "))
+        euler.edge(creaGrafo, arista)       
     euler.view()
-
+    
 print(grafo(euler))
 

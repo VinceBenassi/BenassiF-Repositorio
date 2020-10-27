@@ -2,7 +2,17 @@ graph G {
 	A
 	A -- B
 	B
-	B -- C
-	C
-	C -- A
+	B -- c
+	c
+	c -- D
+	D
+	D -- E
+	E
+	E -- B
+	B
+	B -- D
+	D
+	D -- A
+	A
+	A -- E
 }
