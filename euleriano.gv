@@ -1,18 +1,26 @@
 graph G {
+	node [shape=doublecircle]
 	A
 	A -- B
+	node [shape=doublecircle]
 	B
-	B -- c
-	c
-	c -- D
+	B -- C
+	node [shape=doublecircle]
+	C
+	C -- D
+	node [shape=doublecircle]
 	D
 	D -- E
+	node [shape=doublecircle]
 	E
 	E -- B
+	node [shape=doublecircle]
 	B
 	B -- D
+	node [shape=doublecircle]
 	D
 	D -- A
+	node [shape=doublecircle]
 	A
 	A -- E
 }

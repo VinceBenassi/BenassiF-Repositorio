@@ -2,16 +2,19 @@
 # Por Franco Benassi
 from graphviz import Graph as gr
 
-euler = gr('G', filename='euleriano.gv', engine='sfdp')
-nodos = int(input("Cantidad de nodos que tiene el grafo: "))
+grafo = gr('G', filename='euleriano.gv', engine='sfdp')
+aristas = int(input("Cantidad de aristas que tiene su grafo: "))
 
-def grafo(pdf):
-    for creaGrafo in range(nodos):
-        creaGrafo = str(input("Ingrese un nodo: "))
-        euler.node(creaGrafo)
-        arista = str(input("Con cual nodo quieres conectar el inicio: "))
-        euler.edge(creaGrafo, arista)       
-    euler.view()
+def euler(pdf):
+    for creaGrafo in range(aristas):
+        creaGrafo = str(input("Ingrese nombre para un nodo: "))
+        grafo.attr('node', shape='doublecircle')
+        # Función que crea los nodos por separado graficamente
+        grafo.node(creaGrafo)
+        nodo = str(input("Nombre un nodo para conectarlo con el anterior: "))
+        # Función que conecta los nodos deacuerdo a la decisión del usuario
+        grafo.edge(creaGrafo, nodo)     
+    grafo.view()
     
-print(grafo(euler))
+print(euler(grafo))
 
