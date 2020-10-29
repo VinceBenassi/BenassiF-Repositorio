@@ -2,7 +2,6 @@
 # Proyecto #2 Interfaces Graficas 2020
 # Ejercicio 4
 from PIL import Image as Img, ImageOps as Imo
-import matplotlib 
 
 mar = Img.open("/home/franco/Documentos/Informática/Interfaces de Grafica de Usuario/Proyecto 2/sea.jpg")
 

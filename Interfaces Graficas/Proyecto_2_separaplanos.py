@@ -6,7 +6,7 @@ import math
 
 raiz = Img.open("/home/franco/Documentos/Informática/Interfaces de Grafica de Usuario/Proyecto 2/raiz.jpg")
 color = raiz.getdata()
-fondo = (0, 0, 0)
+backgr = (0, 0, 0)
 
 def PlanosImagen(imagen):
     rojo = [(red[0], 0, 0) for red in color]
@@ -30,12 +30,12 @@ verdi = Img.open('verde.png')
 azzurro = Img.open('azul.png')
 
 def Area(imagen):
-    momen = 0
-    for largo in range(imagen.height):
-        for ancho in range(imagen.width):
-            if (imagen.getpixel((ancho,largo)) != fondo):
-                momen += (math.pow(ancho,0)) * (math.pow(largo,0))
-    return float(momen)
+    cont = 0
+    for base in range(imagen.width):
+        for altura in range(imagen.height):
+            if (imagen.getpixel((base,altura)) != backgr):
+                cont += (math.pow(base,0)) * (math.pow(altura,0))
+    return float(cont)
 
 print("El área de la imagen de plano rojo es:", Area(rosso))
 print("El área de la imagen de plano verde es:", Area(verdi))
