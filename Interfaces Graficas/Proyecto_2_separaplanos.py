@@ -25,6 +25,8 @@ def PlanosImagen(imagen):
 
 print(PlanosImagen(raiz))
 
+
+# Definición del Área de cada plano separado anteriormente 
 rosso = Img.open('rojo.png')
 verdi = Img.open('verde.png')
 azzurro = Img.open('azul.png')

@@ -10,6 +10,18 @@ graph G {
 	C -- D
 	node [shape=doublecircle]
 	D
+	D -- E
+	node [shape=doublecircle]
+	E
+	E -- B
+	node [shape=doublecircle]
+	B
+	B -- D
+	node [shape=doublecircle]
+	D
 	D -- A
+	node [shape=doublecircle]
+	A
+	A -- E
 	fontsize=12 label="\n\nGrafo Euleriano\n por Franco Benassi"
 }

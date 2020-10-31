@@ -8,11 +8,11 @@ chica = Img.open("/home/franco/Documentos/Informática/Interfaces de Grafica de 
 coversion = Img.open('/home/franco/Documentos/Informática/Interfaces de Grafica de Usuario/Proyecto 2/fig_00.jpg').convert('L')
 
 def Graficar_Histograma(imagen):
-    r,g,b = imagen.split()
+    R,G,B = imagen.split()
     imagen.show()
-    pt.plot(r.histogram(),color='r')
-    pt.plot(g.histogram(),color='g')
-    pt.plot(b.histogram(),color='b')
+    pt.plot(R.histogram(),color='r')
+    pt.plot(G.histogram(),color='g')
+    pt.plot(B.histogram(),color='b')
     pt.xlabel("Intensidad Colores")
     pt.ylabel("Cantidad de Pixeles")
     pt.show()

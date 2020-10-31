@@ -1,58 +1,61 @@
 # Programa de Franco Benassi
 # Proyecto #2 Interfaces Graficas 2020
 # Ejercicio 1
-from PIL import Image,ImageDraw,ImageFilter
+from PIL import Image as Img, ImageDraw as ID, ImageFilter as IF
 from PIL.Image import composite
 
-imagen_1 = Image.open("/home/franco/Documentos/Informática/Interfaces de Grafica de Usuario/Proyecto 2/fig_00.jpg")
-imagen_2 = Image.open("/home/franco/Documentos/Informática/Interfaces de Grafica de Usuario/Proyecto 2/fig_01.jpg")
-imagen_3 = Image.open("/home/franco/Documentos/Informática/Interfaces de Grafica de Usuario/Proyecto 2/fig_02.jpg")
-imagen_4 = Image.open("/home/franco/Documentos/Informática/Interfaces de Grafica de Usuario/Proyecto 2/fig_03.jpg")
-imagen_5 = Image.open("/home/franco/Documentos/Informática/Interfaces de Grafica de Usuario/Proyecto 2/fig_04.jpg")
+imagen_1 = Img.open("/home/franco/Documentos/Informática/Interfaces de Grafica de Usuario/Proyecto 2/fig_00.jpg")
+imagen_2 = Img.open("/home/franco/Documentos/Informática/Interfaces de Grafica de Usuario/Proyecto 2/fig_01.jpg")
+imagen_3 = Img.open("/home/franco/Documentos/Informática/Interfaces de Grafica de Usuario/Proyecto 2/fig_02.jpg")
+imagen_4 = Img.open("/home/franco/Documentos/Informática/Interfaces de Grafica de Usuario/Proyecto 2/fig_03.jpg")
+imagen_5 = Img.open("/home/franco/Documentos/Informática/Interfaces de Grafica de Usuario/Proyecto 2/fig_04.jpg")
 
 
-def img_circulo(img1,img2):
-    mascara = Image.new("L",img1.size,0)
-    mask_blur = mascara.filter(ImageFilter.GaussianBlur(10))
-    draw = ImageDraw.Draw(mask_blur)
+def EfectoCirculo(imagen,imagen2):
+    mascara = Img.new("L",imagen.size,0)
+    desenfoque = mascara.filter(IF.GaussianBlur(10))
+    dibuja = ID.Draw(desenfoque)
 
-    draw.ellipse((160, 60, 350, 250), fill=255)
+    dibuja.ellipse((160, 60, 350, 250), fill=255)
 
-    img = Image.composite(img1,img2,mask_blur)
+    img = Img.composite(imagen,imagen2,desenfoque)
     img.show()
 
-print(img_circulo())
+print(EfectoCirculo(imagen_1, imagen_2))
 
-def img_rectangulo(img1,img2):
-    mascara = Image.new("L",img1.size,0)
-    mask_blur = mascara.filter(ImageFilter.GaussianBlur(10))
-    draw = ImageDraw.Draw(mask_blur)
 
-    draw.rectangle((130,80,370,230),fill=255)
-    img = Image.composite(img1,img2,mask_blur)
+def EfectoRectángulo(imagen,imagen2):
+    mascara = Img.new("L",imagen.size,0)
+    desenfoque = mascara.filter(IF.GaussianBlur(10))
+    dibuja = ID.Draw(desenfoque)
+
+    dibuja.rectangle((130,80,370,230),fill=255)
+    img = Img.composite(imagen,imagen2,desenfoque)
     img.show()
 
-print(img_rectangulo(img1,img3))
+print(EfectoRectángulo(imagen_1,imagen_3))
 
-def img_poligono(img1,img2):
-    mascara = Image.new("L",img1.size,0)
-    mask_blur = mascara.filter(ImageFilter.GaussianBlur(10))
-    draw = ImageDraw.Draw(mask_blur)
 
-    draw.polygon([240,60,140,135,180,255,305,255,345,135,240,60],fill = 255)
-    img = Image.composite(img1,img2,mask_blur)
+def EfectoPentágono(imagen,imagen2):
+    mascara = Img.new("L",imagen.size,0)
+    desenfoque = mascara.filter(IF.GaussianBlur(10))
+    dibuja = ID.Draw(desenfoque)
+
+    dibuja.polygon([240,60,140,135,180,255,305,255,345,135,240,60],fill = 255)
+    img = Img.composite(imagen,imagen2,desenfoque)
     img.show()
 
-print(img_poligono(img1,img4))
+print(EfectoPentágono(imagen_1,imagen_4))
 
-def img_corazon(img1,img2):
-    mascara = Image.new("L",img1.size,0)
-    mask_blur = mascara.filter(ImageFilter.GaussianBlur(10))
-    draw = ImageDraw.Draw(mask_blur)
 
-    draw.pieslice([(245,100),(420,83)],start = 50, end = 250 ,fill = 255)
+def EfectoCorazón(imagen,imagen2):
+    mascara = Img.new("L",imagen.size,0)
+    desenfoque = mascara.filter(IF.GaussianBlur(10))
+    dibuja = ID.Draw(desenfoque)
 
-    img = Image.composite(img1,img2,mask_blur)
+    dibuja.pieslice([(245,100),(420,83)],start = 50, end = 250 ,fill = 255)
+
+    img = Img.composite(imagen,imagen2,desenfoque)
     img.show()
 
-print(img_corazon)
+print(EfectoCorazón(imagen_1, imagen_5))
