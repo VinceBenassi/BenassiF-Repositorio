@@ -4,8 +4,8 @@
 from PIL import Image as Img
 from matplotlib import pyplot as pt
 
-chica = Img.open("/home/franco/Documentos/Informática/Interfaces de Grafica de Usuario/Proyecto 2/fig_00.jpg")
-coversion = Img.open('/home/franco/Documentos/Informática/Interfaces de Grafica de Usuario/Proyecto 2/fig_00.jpg').convert('L')
+chica = Img.open("/home/franco-os/Documentos/Informática/Interfaces de Grafica de Usuario/Proyecto 2/fig_00.jpg")
+coversion = Img.open('/home/franco-os/Documentos/Informática/Interfaces de Grafica de Usuario/Proyecto 2/fig_00.jpg').convert('L')
 
 def Graficar_Histograma(imagen):
     R,G,B = imagen.split()

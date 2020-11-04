@@ -7,21 +7,6 @@ graph G {
 	B -- C
 	node [shape=doublecircle]
 	C
-	C -- D
-	node [shape=doublecircle]
-	D
-	D -- E
-	node [shape=doublecircle]
-	E
-	E -- B
-	node [shape=doublecircle]
-	B
-	B -- D
-	node [shape=doublecircle]
-	D
-	D -- A
-	node [shape=doublecircle]
-	A
-	A -- E
+	C -- A
 	fontsize=12 label="\n\nGrafo Euleriano\n por Franco Benassi"
 }

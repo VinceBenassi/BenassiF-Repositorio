@@ -4,11 +4,11 @@
 from PIL import Image as Img, ImageDraw as ID, ImageFilter as IF
 from PIL.Image import composite
 
-imagen_1 = Img.open("/home/franco/Documentos/Informática/Interfaces de Grafica de Usuario/Proyecto 2/fig_00.jpg")
-imagen_2 = Img.open("/home/franco/Documentos/Informática/Interfaces de Grafica de Usuario/Proyecto 2/fig_01.jpg")
-imagen_3 = Img.open("/home/franco/Documentos/Informática/Interfaces de Grafica de Usuario/Proyecto 2/fig_02.jpg")
-imagen_4 = Img.open("/home/franco/Documentos/Informática/Interfaces de Grafica de Usuario/Proyecto 2/fig_03.jpg")
-imagen_5 = Img.open("/home/franco/Documentos/Informática/Interfaces de Grafica de Usuario/Proyecto 2/fig_04.jpg")
+imagen_1 = Img.open("/home/franco-os/Documentos/Informática/Interfaces de Grafica de Usuario/Proyecto 2/fig_00.jpg")
+imagen_2 = Img.open("/home/franco-os/Documentos/Informática/Interfaces de Grafica de Usuario/Proyecto 2/fig_01.jpg")
+imagen_3 = Img.open("/home/franco-os/Documentos/Informática/Interfaces de Grafica de Usuario/Proyecto 2/fig_02.jpg")
+imagen_4 = Img.open("/home/franco-os/Documentos/Informática/Interfaces de Grafica de Usuario/Proyecto 2/fig_03.jpg")
+imagen_5 = Img.open("/home/franco-os/Documentos/Informática/Interfaces de Grafica de Usuario/Proyecto 2/fig_04.jpg")
 
 
 def EfectoCirculo(imagen,imagen2):

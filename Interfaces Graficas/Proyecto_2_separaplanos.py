@@ -4,7 +4,7 @@
 from PIL import Image as Img
 import math
 
-raiz = Img.open("/home/franco/Documentos/Informática/Interfaces de Grafica de Usuario/Proyecto 2/raiz.jpg")
+raiz = Img.open("/home/franco-os/Documentos/Informática/Interfaces de Grafica de Usuario/Proyecto 2/raiz.jpg")
 color = raiz.getdata()
 backgr = (0, 0, 0)
 
@@ -14,13 +14,10 @@ def PlanosImagen(imagen):
     azul = [(0, 0, blue[2]) for blue in color]
     
     imagen.putdata(rojo)
-    imagen.show()
     imagen.save('rojo.png')
     imagen.putdata(verde)
-    imagen.show()
     imagen.save('verde.png')
     imagen.putdata(azul)
-    imagen.show()
     imagen.save('azul.png')
 
 print(PlanosImagen(raiz))
