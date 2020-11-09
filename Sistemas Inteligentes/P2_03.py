@@ -59,7 +59,7 @@ def nFh_Head():
 #---------------------------------------------------------------------
 def EnviandoImagen():
     threading.Timer(10.0, EnviandoImagen).start()
-    # Toma un screenshot de la ventana de pygame
+    # Tomar pantallazo de la ventana de pygame
     pygame.image.save(sc, "/home/franco-os/Documentos/Mis Programas Git/pantallazo.png")
     img = open("/home/franco-os/Documentos/Mis Programas Git/pantallazo.png", 'rb')
     bot.sendPhoto(chat_id=chat_ID, photo=img)
