@@ -1,12 +1,30 @@
 graph G {
 	node [shape=doublecircle]
-	A
-	A -- B
+	1
+	1 -- 2
 	node [shape=doublecircle]
-	B
-	B -- C
+	1
+	1 -- 7
 	node [shape=doublecircle]
-	C
-	C -- A
+	2
+	2 -- 2
+	node [shape=doublecircle]
+	2
+	2 -- 3
+	node [shape=doublecircle]
+	2
+	2 -- 4
+	node [shape=doublecircle]
+	3
+	3 -- 3
+	node [shape=doublecircle]
+	4
+	4 -- 5
+	node [shape=doublecircle]
+	4
+	4 -- 7
+	node [shape=doublecircle]
+	5
+	5 -- 6
 	fontsize=12 label="\n\nGrafo Euleriano\n por Franco Benassi"
 }
