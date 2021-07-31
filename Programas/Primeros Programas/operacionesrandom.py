@@ -4,7 +4,7 @@ class Coche:
         self.gasolina = gasolina
         print("Hay", gasolina, "litros")
         
-    def arrancar(self, valor):
+    def arrancar(self):
         if self.gasolina > 0:
             print("Arranca")
         else:
@@ -16,3 +16,7 @@ class Coche:
             print("Quedan", self.gasolina, "litros")
         else:
             print("No se mueve")
+
+Corvette = Coche(100)
+print(Corvette.arrancar())
+print(Corvette.conducir())

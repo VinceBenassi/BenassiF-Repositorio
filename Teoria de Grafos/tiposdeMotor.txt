@@ -1,7 +1,6 @@
 Para la librería graphviz de Python
 
 Engine
-
 circo
 sfdp
 dot
