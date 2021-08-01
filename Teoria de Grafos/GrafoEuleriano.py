@@ -2,7 +2,7 @@
 # Por Franco Benassi
 from graphviz import Graph as gr
 
-grafo = gr('G', filename='euleriano.gv', engine='circo') # engine es el motor gráfico
+grafo = gr('G', filename='euleriano', engine='circo') # engine es el motor gráfico
 aristas = int(input("Cantidad de aristas que tiene su grafo: "))
 
 def euler(pdf):
