@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+        <meta charset="UTF-8">
+        <title>Mapa de Temuco</title>
+
+    </head>
+    <body bgcolor="darkgrey">
+        <h1 style="color: black;">Mapa Temuco</h1>
+        <div style="width: 1000px; height: 1000px;" >
+            
+            <div id="MapaID" style="width: 800px; height: 500px;"></div>
+            <div id="NContaminacion" style="width: 800px; height: 500px;"></div>
+        </div>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        <script type="text/javascript" src="../static/jquery-3.4.1.min.js"></script>
+        <script>
+
+            var DatosMP = [
+                {P1:[], P2:[], P3:[]},
+                {P1:[], P2:[], P3:[]},
+                {P1:[], P2:[], P3:[]},
+                {P1:[], P2:[], P3:[]},
+                {P1:[], P2:[], P3:[]}
+            ]
+
+            var contTiempoDatillos = 1000;
+            var CoorX = 0;
+
+            function AlmacenaDatos(datos){
+                for(var index = 0; index <= 1; index++){
+                    DatosMP[0].P1.push({x:CoorX, y:datos[0][0]});
+                    DatosMP[1].P1.push({x:CoorX, y:datos[0][1]});
+                    DatosMP[2].P1.push({x:CoorX, y:datos[0][2]});
+                    DatosMP[3].P1.push({x:CoorX, y:datos[0][3]});
+                    DatosMP[4].P1.push({x:CoorX, y:datos[0][4]});
+
+                    DatosMP[0].P2.push({x:CoorX, y:datos[1][0]});
+                    DatosMP[1].P2.push({x:CoorX, y:datos[1][1]});
+                    DatosMP[2].P2.push({x:CoorX, y:datos[1][2]});
+                    DatosMP[3].P2.push({x:CoorX, y:datos[1][3]});
+                    DatosMP[4].P2.push({x:CoorX, y:datos[1][4]});
+                    
+                    DatosMP[0].P3.push({x:CoorX, y:datos[2][0]});
+                    DatosMP[1].P3.push({x:CoorX, y:datos[2][1]});
+                    DatosMP[2].P3.push({x:CoorX, y:datos[2][2]});
+                    DatosMP[3].P3.push({x:CoorX, y:datos[2][3]});
+                    DatosMP[4].P3.push({x:CoorX, y:datos[2][4]}); 
+                    
+                CoorX += 1;
+                }
+            }
+
+            function GraficaDatos(mp1, mp25, mp10, nombreMP){
+                var Grafico = new CanvasJS.Chart("NContaminacion", {
+                exportEnabled: false,
+                title: {text:nombreMP},
+                
+                axisX: {title: "Mediciones"},
+                axisY: {title: "Material Particulado", suffix: "ug/mp3", includeZero:false},
+                legend: {horizontalAling: "center",verticalAling: "top", fontsize: 15},
+
+                data: [{type: "spline", showInLegend:true, legendText:"MP 1.0 ug/mp3", dataPoints:mp1, color: ['blue']},                
+                       {type: "spline", showInLegend:true, legendText:"MP 2.5 ug/mp3", dataPoints:mp25, color: ['green']},
+                       {type: "spline", showInLegend:true, legendText:"MP 10 ug/mp3", dataPoints:mp10, color: ['red']}
+                    
+                ]
+                });
+
+            Grafico.render();
+            }
+
+            var Estacion_1 = {label: "Estacion de Niveles de Contaminacion N°1", coordenadas:[-38.71231, -72.66672]};
+            var Estacion_2 = {label: "Estacion de Niveles de Contaminacion N°2", coordenadas:[-38.71212, -72.55673]};
+            var Estacion_3 = {label: "Estacion de Niveles de Contaminacion N°3", coordenadas:[-38.71333, -72.59674]};
+            var Estacion_4 = {label: "Estacion de Niveles de Contaminacion N°4", coordenadas:[-38.73524, -72.60245]};
+            var Estacion_5 = {label: "Estacion de Niveles de Contaminacion N°5", coordenadas:[-38.71785, -72.64276]};
+
+            var icono = L.icon({
+                    iconUrl: 'https://lh3.googleusercontent.com/114RC32x6xsq8WjrY5r1d-oxcSx7mgTwgsIB-kEoRRV7Y3-MMhaVfTVRpxheO5vGYjvg7fc=s29',
+                    iconSize: [30,30],
+                });
+
+
+            var Mapa = L.map('MapaID').setView([-38.73331, -72.66672], 12);
+            
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright%22%3EOpenStreetMap</a> contributors'
+                }).addTo(Mapa);
+
+
+            L.marker(Estacion_1.coordenadas,{icon:icono}).addTo(Mapa).bindPopup(Estacion_1.label).on("click",MaterialParticuladoMapa);
+            L.marker(Estacion_2.coordenadas,{icon:icono}).addTo(Mapa).bindPopup(Estacion_2.label).on("click",MaterialParticuladoMapa);
+            L.marker(Estacion_3.coordenadas,{icon:icono}).addTo(Mapa).bindPopup(Estacion_3.label).on("click",MaterialParticuladoMapa);
+            L.marker(Estacion_4.coordenadas,{icon:icono}).addTo(Mapa).bindPopup(Estacion_4.label).on("click",MaterialParticuladoMapa);
+            L.marker(Estacion_5.coordenadas,{icon:icono}).addTo(Mapa).bindPopup(Estacion_5.label).on("click",MaterialParticuladoMapa);
+
+            setInterval(Sample,5000);
+
+            var MuestraMP = L.popup();
+            
+            function MaterialParticuladoMapa(eleccionLL){
+                MuestraMP.setLatLng(eleccionLL.latlng)
+                if(eleccionLL.latlng.lat == Estacion_1.coordenadas[0] && eleccionLL.latlng.lng == Estacion_1.coordenadas[1]){
+                    GraficaDatos(DatosMP[0].P1, DatosMP[0].P2, DatosMP[0].P3, Estacion_1.label);
+                }
+                if(eleccionLL.latlng.lat == Estacion_2.coordenadas[0] && eleccionLL.latlng.lng == Estacion_2.coordenadas[1]){
+                    GraficaDatos(DatosMP[1].P1, DatosMP[1].P2, DatosMP[1].P3, Estacion_2.label);
+                }
+                if(eleccionLL.latlng.lat == Estacion_3.coordenadas[0] && eleccionLL.latlng.lng == Estacion_3.coordenadas[1]){
+                    GraficaDatos(DatosMP[2].P1, DatosMP[2].P2, DatosMP[2].P3, Estacion_3.label);
+                }
+                if(eleccionLL.latlng.lat == Estacion_4.coordenadas[0] && eleccionLL.latlng.lng == Estacion_4.coordenadas[1]){
+                    GraficaDatos(DatosMP[3].P1, DatosMP[3].P2, DatosMP[3].P3, Estacion_4.label);
+                } 
+                if(eleccionLL.latlng.lat == Estacion_5.coordenadas[0] && eleccionLL.latlng.lng == Estacion_5.coordenadas[1]){
+                    GraficaDatos(DatosMP[4].P1, DatosMP[4].P2, DatosMP[4].P3, Estacion_5.label);
+                }
+            }
+
+            function ObtenerJson(){
+                $.getJSON("http://127.0.0.1:5000/Get_Data", function(data){
+                    AlmacenaDatos(data);
+                    });
+                };
+
+            function Sample() {
+                    ObtenerJson();
+                };
+            
+        </script>
+
+        <footer>
+            <p>Franco Benassi</p>
+        </footer>
+
+</body>
+</html>

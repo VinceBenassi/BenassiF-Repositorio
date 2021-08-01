@@ -1,0 +1,14 @@
+Para la librería graphviz de Python
+
+Engine
+circo
+sfdp
+dot
+neato
+twopi
+fdp
+
+Tipos de Grafos
+ Dirigidos y no Dirigidos
+ dirigidos se manejan con flechas usando Digraph en graphviz
+ no dirigidos se manejan con aristas usando Graph en graphviz
