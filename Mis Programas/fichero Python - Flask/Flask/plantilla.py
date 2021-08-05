@@ -6,7 +6,8 @@ app = Flask(__name__)
 def comienzo():
     valorNombre = "Franco"
     valorEdad = "21"
-    return rt("main.html", nombre=valorNombre, edad=valorEdad)
+    diccionario = {'nombre':'Franco', 'edad':'21'}
+    return rt("main.html", datos=diccionario)
 
 @app.route("/sumando/<valor1>/<valor2>")
 def portada(valor1, valor2):
