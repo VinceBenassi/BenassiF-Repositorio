@@ -1,0 +1,21 @@
+{% extends "main.html" %}
+
+{% block contenido %}
+
+<h2>Ingrese un Nombre</h2>
+
+<p>Debe cumplir los siguientes requisitos: </p>
+
+<ul>
+    <li>Debe Empezar con una letra Mayúscula</li>
+    <li>Debe tener letras minúsculas</li>
+    <li>Debe tener algún número</li>
+</ul>
+
+<form action="{{ url_for('respuesta') }}">
+    Nombre: <input type="text" name="nombre">
+    <br>
+    <input type="submit" value="Enviar Datos">
+</form>
+
+{% endblock %}

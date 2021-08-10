@@ -1,0 +1,15 @@
+{% extends "mainHerencia.html" %}
+
+{% block contenido %}
+
+<h3>Ingrese sus datos personales: </h3>
+
+<form action="{{ url_for('agradecimiento') }}">
+    Nombre: <input type="text" name="nombre">
+    <br>
+    Apellidos: <input type="text" name="apellidos">
+    <br>
+    <input type="submit" value="Enviar Datos">
+</form>
+
+{% endblock %}

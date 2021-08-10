@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es-cl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Heredando en Flask</title>
+</head>
+
+<body>
+    <div>
+        <a href="{{ url_for('herencia') }}"> Herencia</a>
+        <a href="{{ url_for('herencia2') }}"> Heredando</a>
+        <a href="{{ url_for('formulario') }}"> Formulario</a>
+        <a href="{{ url_for('static', filename='playa.jpg') }}"> La Playa</a>
+    </div>
+    <br>
+    <hr>
+    <br>
+
+{% block contenido %}
+
+{% endblock %}
+<br>
+<hr>
+<br>
+
+<h2>Este es el pie de página</h2>
+
+</body>
+</html>

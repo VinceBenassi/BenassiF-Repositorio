@@ -1,0 +1,25 @@
+{% extends "main.html" %}
+
+{% block contenido %}
+
+<h2>Resultado de Validación</h2>
+
+{% if todo %}
+    <h2>Hola {{ nombre }}, Gracias por registrarte!!</h2>
+{% else %}
+<ul>
+    {% if not lmay %}
+        <h2>El nombre ingresado no comienza con Mayúscula</h2>
+    {% endif %}
+
+    {% if not lmin %}
+        <h2>El nombre ingresado no tiene letras minúsculas</h2>
+    {% endif %}
+
+    {% if not digito %}
+        <h2>El nombre ingresado no tiene números</h2>
+    {% endif %}
+</ul>
+{% endif %}
+
+{% endblock %}

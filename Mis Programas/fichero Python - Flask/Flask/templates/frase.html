@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es-cl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Frases en Flask y HTML</title>
+</head>
+
+<body>
+    {% if tipo == 'hola' %}
+    <h2>Hola, Buenas Tardes</h2>
+    {% elif tipo == 'adios' %}
+    <h3>Adiós, nos estamos viendo</h3>
+    {% else %}
+    <h2>Buenas Noches</h2>
+    {% endif %}
+</body>
+</html>
