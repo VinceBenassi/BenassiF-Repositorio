@@ -19,4 +19,4 @@ def buscarCoincidencia(patron):
     else:
         print("No se ha encontrado la palabra", patron, "como coincidencia")
 
-#final = buscarCoincidencia("fuertes")
+final = buscarCoincidencia("fuertes")
