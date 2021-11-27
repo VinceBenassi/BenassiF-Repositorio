@@ -1,0 +1,11 @@
+el imprime(cadena) dewman{
+	pengeln(cadena);
+}
+
+miCadena = 'Whasaaaaaaaaa';
+pule i=0 mew 10 chi 1 dewman{
+	imprime(miCadena);
+}
+
+
+

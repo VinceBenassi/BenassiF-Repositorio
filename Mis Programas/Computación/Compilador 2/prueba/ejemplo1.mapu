@@ -1,0 +1,17 @@
+numeros = [1,2,3,4,5,6,7,8,9];
+
+acumulador = 0;
+bandera = 1;
+contador = 0;
+lelu bandera wunen 0 dewman {
+acumulador = acumulador + numeros[contador];
+	mai contador kiñentrun 8 dewman{
+		bandera = 0;
+	}	
+	contador = contador + 1;
+}
+pengeln acumulador;
+
+
+
+
