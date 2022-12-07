@@ -1,0 +1,15 @@
+graph G {
+	node [shape=doublecircle]
+	Temuco
+	Temuco -- "Padre de La Casas"
+	node [shape=doublecircle]
+	Temuco
+	Temuco -- Labranza
+	node [shape=doublecircle]
+	"Padre de La Casas"
+	"Padre de La Casas" -- Cunco
+	node [shape=doublecircle]
+	"Temuco "
+	"Temuco " -- "Fundo el Carmen"
+	fontsize=12 label="\n\nGrafo Euleriano\n por Franco Benassi"
+}

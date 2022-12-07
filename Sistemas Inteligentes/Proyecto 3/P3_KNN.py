@@ -6,10 +6,10 @@ from math import pi
 import pandas as pd
 
 #Ejercicio 1
-dTraining = pd.read_csv("/home/franco-os/Documentos/Informática/Sistemas Inteligentes/Proyecto 3/Datas/data_training.txt", sep=",")
+dTraining = pd.read_csv("/home/vincebenassi/Documentos/Informática/Sistemas Inteligentes/Proyecto 3/Datas/data_training.txt", sep=",")
 DF1 = pd.DataFrame(dTraining)
 
-dTest = pd.read_csv("/home/franco-os/Documentos/Informática/Sistemas Inteligentes/Proyecto 3/Datas/data_test.txt", sep=",")
+dTest = pd.read_csv("/home/vincebenassi/Documentos/Informática/Sistemas Inteligentes/Proyecto 3/Datas/data_test.txt", sep=",")
 DF2 = pd.DataFrame(dTest)
 
 dLabel = {0: 'Iris-setosa', 1: 'Iris-versicolor', 2: 'Iris-virginica'}
